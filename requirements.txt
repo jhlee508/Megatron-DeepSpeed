@@ -1,0 +1,5 @@
+transformers
+six
+nltk
+pybind11
+tensorboard
