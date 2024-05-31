@@ -1,7 +1,7 @@
 __pycache__
 
 # Distribution / packaging
-build/
+build*/
 dist/
 *.egg-info/
 
@@ -21,3 +21,4 @@ logs
 
 # Data folder
 bookcorpus_data/
+data/
