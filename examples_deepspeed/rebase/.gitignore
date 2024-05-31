@@ -1,0 +1,6 @@
+# output & logs
+output/
+*.log
+
+# configs
+ds_config*.json
