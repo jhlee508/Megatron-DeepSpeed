@@ -40,8 +40,14 @@ def load(args):
 
     # Build path
     srcpath = pathlib.Path(__file__).parent.absolute()
-    buildpath = srcpath / 'build'
-    _create_build_dir(buildpath)
+
+    if torch.version.hip is not None:
+        buildpath = srcpath / 'build_hip'
+        _create_build_dir(buildpath)
+    else:
+        buildpath = srcpath / 'build'
+        _create_build_dir(buildpath)
+    print(f"[LOG] RANK{args.rank}, Build path: {buildpath}")
 
     # Helper function to build the kernels.
     def _cpp_extention_load_helper(name, sources, extra_cuda_flags, extra_include_paths):
